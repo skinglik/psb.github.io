@@ -1,34 +1,34 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $token = "ÂÀØ_ÒÅËÅÃÐÀÌ_ÁÎÒ_ÒÎÊÅÍ";
-    $chat_id = "ÂÀØ_CHAT_ID";
+    $token = "Ð’ÐÐ¨_Ð¢Ð•Ð›Ð•Ð“Ð ÐÐœ_Ð‘ÐžÐ¢_Ð¢ÐžÐšÐ•Ð";
+    $chat_id = "Ð’ÐÐ¨_CHAT_ID";
     
-    // Ñîáèðàåì äàííûå èç ôîðìû
+    // Ð¡Ð¾Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð· Ñ„Ð¾Ñ€Ð¼Ñ‹
     $name = $_POST['name'];
     $inn = $_POST['inn'];
     $region = $_POST['region'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
 
-    // Ñîîáùåíèå äëÿ îòïðàâêè
-    $message = "Íîâîå ñîîáùåíèå:\n";
-    $message .= "Èìÿ: " . $name . "\n";
-    $message .= "ÈÍÍ: " . $inn . "\n";
-    $message .= "Ðåãèîí/Ãîðîä: " . $region . "\n";
-    $message .= "Òåëåôîí: " . $phone . "\n";
-    $message .= "Ïî÷òà: " . $email;
+    // Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð´Ð»Ñ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÐ¸
+    $message = "ÐÐ¾Ð²Ð¾Ðµ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ:\n";
+    $message .= "Ð˜Ð¼Ñ: " . $name . "\n";
+    $message .= "Ð˜ÐÐ: " . $inn . "\n";
+    $message .= "Ð ÐµÐ³Ð¸Ð¾Ð½/Ð“Ð¾Ñ€Ð¾Ð´: " . $region . "\n";
+    $message .= "Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½: " . $phone . "\n";
+    $message .= "ÐŸÐ¾Ñ‡Ñ‚Ð°: " . $email;
 
-    // URL äëÿ îòïðàâêè çàïðîñà
+    // URL Ð´Ð»Ñ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÐ¸ Ð·Ð°Ð¿Ñ€Ð¾ÑÐ°
     $url = "https://api.telegram.org/bot" . $token . "/sendMessage?chat_id=" . $chat_id . "&parse_mode=HTML&text=" . urlencode($message);
 
-    // Îòïðàâêà çàïðîñà â Telegram
+    // ÐžÑ‚Ð¿Ñ€Ð°Ð²ÐºÐ° Ð·Ð°Ð¿Ñ€Ð¾ÑÐ° Ð² Telegram
     $response = file_get_contents($url);
 
-    // Ïðîâåðÿåì óñïåøíîñòü îòïðàâêè
+    // ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ÑÑ‚ÑŒ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÐ¸
     if ($response) {
-        echo "Ñîîáùåíèå îòïðàâëåíî!";
+        echo "Ð¡Ð¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¾!";
     } else {
-        echo "Îøèáêà îòïðàâêè ñîîáùåíèÿ.";
+        echo "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÐ¸ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ñ.";
     }
 }
 ?>
