@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $token = "6975528102:AAGGhVWyL6nNFTHIcqS0xgYD72ClR_ktFzQ";
-    $chat_id = "917827134";
+    $token = "";
+    $chat_id = "";
     
     // Собираем данные из формы
     $name = $_POST['name'];
