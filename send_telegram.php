@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $token = "ВАШ_ТЕЛЕГРАМ_БОТ_ТОКЕН";
-    $chat_id = "ВАШ_CHAT_ID";
+    $token = "6975528102:AAGGhVWyL6nNFTHIcqS0xgYD72ClR_ktFzQ";
+    $chat_id = "917827134";
     
     // Собираем данные из формы
     $name = $_POST['name'];
